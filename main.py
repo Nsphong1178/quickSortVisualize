@@ -33,27 +33,26 @@ def selection_sort(arr, width, height):
         draw_bars(arr, i, width, height)  # Hiển thị mỗi bước sắp xếp
 
 
-# Nhập số lượng phần tử từ bàn phím
+
 num = int(input("Nhập số lượng phần tử: "))
 
-# Nhập các phần tử từ bàn phím
+
 numList = []
 for i in range(num):
     numList.append(int(input()))
 
-# Tính toán kích thước hình ảnh dựa trên số lượng phần tử
+
 width = 2000
 bar_width = width // num
 height = max(numList) * bar_width + 200
 
-# Tạo cửa sổ hiển thị
+
 cv2.namedWindow("Sorting Visualization", cv2.WINDOW_NORMAL)
 cv2.setWindowProperty("Sorting Visualization", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 # Hiển thị mảng ban đầu
 draw_bars(numList, -1, width, height)
 cv2.waitKey(3000)
 
-# Sắp xếp mảng và hiển thị từng bước
 selection_sort(numList, width, height)
 
 cv2.waitKey(0)
